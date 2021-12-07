@@ -1,9 +1,10 @@
 <template>
   <div class='container'>
+    <h1>Welcome</h1>
     <input type='email' placeholder='Email...' v-model='email'/>
     <input type='password' placeholder='Password...' v-model='password'/>
     <button @click.prevent='signin'>Sign In</button>
-    <p>{{ msg.msg }}</p>
+    <p v-if='msg'>{{ msg.msg }}</p>
   </div>
 </template>
 
@@ -33,8 +34,38 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+@import '../assets/variables';
+
 .container {
   display: flex;
   flex-direction: column;
+  background-color: $BlueColor;
+  box-shadow: -2px 2px 10px $BlackDarkColor;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  border-radius: 3px;
+  color: $Gray200Color;
+  h1 {
+    padding: 10px 0;
+    font-weight: 100;
+  }
+  input {
+    margin: 5px 0;
+    outline: none;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+  }
+  button {
+    margin: 10px 0;
+    outline: none;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: $LightBlueColor;
+    color: $BlackDarkColor;
+    font-weight: 700;
+  }
 }
 </style>

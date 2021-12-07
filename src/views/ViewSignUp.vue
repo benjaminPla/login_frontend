@@ -6,7 +6,7 @@
 import SignUp from '../components/SignUp.vue';
 
 export default {
-  name: 'About',
+  name: 'ViewSignUp',
   components: { SignUp },
 };
 </script>
