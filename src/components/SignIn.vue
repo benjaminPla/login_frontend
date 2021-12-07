@@ -61,11 +61,17 @@ export default {
     margin: 10px 0;
     outline: none;
     border: none;
-    padding: 5px;
+    padding: 10px;
     border-radius: 3px;
     background-color: $LightBlueColor;
+    color: $Gray900Color;
     color: $BlackDarkColor;
     font-weight: 700;
+    transition:  .2s;
+  }
+  button:hover {
+    cursor: pointer;
+    background-color: $Gray200Color;
   }
 }
 </style>
