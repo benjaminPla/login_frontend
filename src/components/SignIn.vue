@@ -4,15 +4,17 @@
     <input type='email' placeholder='Email...' v-model='email'/>
     <input type='password' placeholder='Password...' v-model='password'/>
     <button @click.prevent='signin'>Sign In</button>
-    <p v-if='msg'>{{ msg.msg }}</p>
+    <notification v-if='msg' :msg='msg'/>
   </div>
 </template>
 
 <script>
 import { ref } from 'vue';
+import Notification from './Notification.vue';
 
 export default {
   name: 'SignIn',
+  components: { Notification },
   setup() {
     const email = ref('');
     const password = ref('');
