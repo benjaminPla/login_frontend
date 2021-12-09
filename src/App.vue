@@ -15,11 +15,14 @@ export default {
 </script>
 
 <style lang='scss'>
+@import './assets/variables';
+
 #app {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background: $LightBlueColor;
 }
 </style>

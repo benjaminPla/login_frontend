@@ -25,13 +25,13 @@ footer {
   text-align: center;
   font-size: 1.5rem;
   padding: 20px 15%;
-  color: $BlueColor;
+  color: $BlackDarkColor;
   a {
     margin: 0 20px;
     transition: 0.2s;
   }
   a:hover {
-    color: $LightBlueColor;
+    color: $BlueColor;
   }
 }
 </style>

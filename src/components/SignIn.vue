@@ -65,15 +65,15 @@ export default {
     border: none;
     padding: 10px;
     border-radius: 3px;
-    background-color: $LightBlueColor;
-    color: $Gray900Color;
-    color: $BlackDarkColor;
     font-weight: 700;
     transition:  .2s;
+    background-color: $Gray200Color;
+    color: $BlackDarkColor;
   }
   button:hover {
     cursor: pointer;
-    background-color: $Gray200Color;
+    background-color: $BlackDarkColor;
+    color: $Gray200Color;
   }
 }
 </style>

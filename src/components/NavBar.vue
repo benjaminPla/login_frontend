@@ -31,6 +31,12 @@ nav {
   }
   .route {
     margin: 0 10px;
+    font-weight: 700;
+    color: $Gray200Color;
+    transition: 0.2s;
+  }
+  .route:hover {
+    color: $BlackDarkColor;
   }
 }
 </style>

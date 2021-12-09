@@ -65,11 +65,16 @@ export default {
     margin: 10px 0;
     outline: none;
     border: none;
-    padding: 5px;
+    padding: 10px;
     border-radius: 3px;
-    background-color: $LightBlueColor;
-    color: $BlackDarkColor;
     font-weight: 700;
+    background-color: $Gray200Color;
+    color: $BlackDarkColor;
+  }
+  button:hover {
+    cursor: pointer;
+    background-color: $BlackDarkColor;
+    color: $Gray200Color;
   }
 }
 </style>
