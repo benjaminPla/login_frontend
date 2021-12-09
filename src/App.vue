@@ -1,20 +1,23 @@
 <template>
-  <nav>
-    <router-link to="/">Sign In</router-link> |
-    <router-link to="/signup">Sign Up</router-link>
-  </nav>
+  <nav-bar />
   <router-view/>
 </template>
 
-<style lang='scss'>
-@import './assets/variables';
+<script>
+import NavBar from './components/NavBar.vue';
 
+export default {
+  name: 'App',
+  components: { NavBar },
+};
+</script>
+
+<style lang='scss'>
 #app {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  // background-color: $CyanColor;
 }
 </style>

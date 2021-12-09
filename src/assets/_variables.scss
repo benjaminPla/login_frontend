@@ -4,6 +4,13 @@
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
 
 $BlueColor: #467fd0;
 $LightBlueColor: #69d2f1;
