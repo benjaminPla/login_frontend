@@ -3,7 +3,7 @@
     <h1>Welcome</h1>
     <input type='email' placeholder='Email...' v-model='email'/>
     <input type='password' placeholder='Password...' v-model='password'/>
-    <button @click.prevent='signin'>Sign In</button>
+    <button @click.prevent='signin'>SIGN IN</button>
     <notification v-if='msg' :msg='msg'/>
   </div>
 </template>

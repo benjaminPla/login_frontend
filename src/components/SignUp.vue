@@ -1,10 +1,10 @@
 <template>
   <div class='container'>
-    <h1>Welcome</h1>
+    <h1>Create an account</h1>
     <input type='email' placeholder='Email...' v-model='email'/>
     <input type='password' placeholder='Password...' v-model='password'/>
     <input type='password' placeholder='Repeat password...' v-model='repeatPassword'/>
-    <button @click.prevent='signup'>Sign Up</button>
+    <button @click.prevent='signup'>SIGN UP</button>
     <p v-if='msg'>{{ msg.msg }}</p>
   </div>
 </template>
