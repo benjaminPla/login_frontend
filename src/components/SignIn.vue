@@ -50,7 +50,7 @@ export default {
   border-radius: 3px;
   color: $Gray200Color;
   h1 {
-    padding: 10px 0;
+    padding-bottom: 10px;
     font-weight: 100;
   }
   input {

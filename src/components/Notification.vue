@@ -1,5 +1,7 @@
 <template>
-  <span class='msg' :class='msg.ok ? "success" : "fail"'>{{ msg.msg }}</span>
+  <span class='msg' :class='msg.ok ? "success" : "fail"'>
+    {{ msg.msg.errno === 1062 ? 'Account already exists' : msg.msg }}
+  </span>
 </template>
 
 <script>

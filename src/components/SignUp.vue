@@ -4,9 +4,8 @@
     <input type='email' placeholder='Email...' v-model='email'/>
     <input type='password' placeholder='Password...' v-model='password'/>
     <input type='password' placeholder='Repeat password...' v-model='repeatPassword'/>
-    <button @click.prevent='signup'>SIGN UP</button>
     <main-btn @click.prevent='signup' textContent='SIGN UP'/>
-    <notification v-if='msg' :msg='msg'/>>
+    <notification v-if='msg' :msg='msg'/>
   </div>
 </template>
 
@@ -33,6 +32,8 @@ export default {
         })
         .then(async (data) => msg.value = await data.json())
         .catch((error) => console.log(error));
+      } else {
+        msg.value = { ok: false, msg: 'Passwords do not match' };
       };
     };
     return { email, password, repeatPassword, msg, signup };
@@ -55,7 +56,7 @@ export default {
   border-radius: 3px;
   color: $Gray200Color;
   h1 {
-    padding: 10px 0;
+    padding-bottom: 10px;
     font-weight: 100;
   }
   input {
