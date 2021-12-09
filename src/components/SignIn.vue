@@ -3,18 +3,19 @@
     <h1>Welcome</h1>
     <input type='email' placeholder='Email...' v-model='email'/>
     <input type='password' placeholder='Password...' v-model='password'/>
-    <button @click.prevent='signin'>SIGN IN</button>
+    <main-btn @click.prevent='signin' textContent='SIGN IN'/>
     <notification v-if='msg' :msg='msg'/>
   </div>
 </template>
 
 <script>
 import { ref } from 'vue';
+import MainBtn from './MainBtn.vue';
 import Notification from './Notification.vue';
 
 export default {
   name: 'SignIn',
-  components: { Notification },
+  components: { MainBtn, Notification },
   setup() {
     const email = ref('');
     const password = ref('');
@@ -58,22 +59,6 @@ export default {
     border: none;
     padding: 10px;
     border-radius: 3px;
-  }
-  button {
-    margin: 10px 0;
-    outline: none;
-    border: none;
-    padding: 10px;
-    border-radius: 3px;
-    font-weight: 700;
-    transition:  .2s;
-    background-color: $Gray200Color;
-    color: $BlackDarkColor;
-  }
-  button:hover {
-    cursor: pointer;
-    background-color: $BlackDarkColor;
-    color: $Gray200Color;
   }
 }
 </style>

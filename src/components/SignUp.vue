@@ -5,15 +5,19 @@
     <input type='password' placeholder='Password...' v-model='password'/>
     <input type='password' placeholder='Repeat password...' v-model='repeatPassword'/>
     <button @click.prevent='signup'>SIGN UP</button>
-    <p v-if='msg'>{{ msg.msg }}</p>
+    <main-btn @click.prevent='signup' textContent='SIGN UP'/>
+    <notification v-if='msg' :msg='msg'/>>
   </div>
 </template>
 
 <script>
 import { ref } from 'vue';
+import MainBtn from './MainBtn.vue';
+import Notification from './Notification.vue';
 
 export default {
   name: 'SignUp',
+  components: { MainBtn, Notification },
   setup() {
     const email = ref('');
     const password = ref('');
@@ -60,21 +64,6 @@ export default {
     border: none;
     padding: 10px;
     border-radius: 3px;
-  }
-  button {
-    margin: 10px 0;
-    outline: none;
-    border: none;
-    padding: 10px;
-    border-radius: 3px;
-    font-weight: 700;
-    background-color: $Gray200Color;
-    color: $BlackDarkColor;
-  }
-  button:hover {
-    cursor: pointer;
-    background-color: $BlackDarkColor;
-    color: $Gray200Color;
   }
 }
 </style>
