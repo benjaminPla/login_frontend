@@ -2,8 +2,11 @@
   <nav>
     <img src='../assets/logo.png' alt='logo' />
     <div>
-      <router-link class='route' to="/">Sign In</router-link>
-      <router-link class='route' to="/signup">Sign Up</router-link>
+      <router-link class='route' to="/signup" v-if='login'>Sign Out</router-link>
+      <div v-else>
+        <router-link class='route' to="/">Sign In</router-link>
+        <router-link class='route' to="/signup">Sign Up</router-link>
+      </div>
     </div>
   </nav>
 </template>
@@ -11,6 +14,10 @@
 <script>
 export default {
   name: 'NavBar',
+  setup() {
+    const login = localStorage.getItem('login');
+    return { login };
+  },
 };
 </script>
 

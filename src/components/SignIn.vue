@@ -22,13 +22,18 @@ export default {
     const msg = ref('');
     /* eslint-disable */
     const signin = async () => {
-      await fetch('http://localhost:3001/signin', {
-        method: 'post',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ email: email.value, password: password.value }),
-      })
-      .then(async (data) => msg.value = await data.json())
-      .catch((error) => console.log(error));
+      try {
+        const data = await fetch('http://localhost:3001/signin', {
+          method: 'post',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ email: email.value, password: password.value }),
+        })
+        const formatData = await data.json();
+        msg.value = formatData;
+        formatData.ok && localStorage.setItem('login', email.value);
+      } catch (error) {
+        console.log(error);
+      };
     };
     return { email, password, msg, signin };
     /* eslint-enable */
