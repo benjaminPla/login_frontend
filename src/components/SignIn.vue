@@ -2,7 +2,8 @@
   <div class='container'>
     <h1>Welcome</h1>
     <input type='email' placeholder='Email...' v-model='email'/>
-    <input type='password' placeholder='Password...' v-model='password'/>
+    <input type='password' placeholder='Password...' v-model='password' id='password'/>
+    <i id='toggler' @click.prevent='togglePassView' class="fas fa-eye"></i>
     <main-btn @click.prevent='signin' textContent='SIGN IN'/>
     <notification v-if='msg' :msg='msg'/>
   </div>
@@ -21,6 +22,17 @@ export default {
     const password = ref('');
     const msg = ref('');
     /* eslint-disable */
+    const togglePassView = () => {
+      const input = document.querySelector('#password');
+      const icon = document.querySelector('#toggler');
+      if (input.getAttribute('type') === 'password') {
+        input.setAttribute('type', 'text');
+        icon.classList.add('fa-eye-slash');
+      } else {
+        input.setAttribute('type', 'password');
+        icon.classList.remove('fa-eye-slash');
+      };
+    };
     const signin = async () => {
       try {
         const data = await fetch('http://localhost:3001/signin', {
@@ -30,12 +42,12 @@ export default {
         })
         const formatData = await data.json();
         msg.value = formatData;
-        formatData.ok && localStorage.setItem('login', email.value);
+        formatData.ok && localStorage.setItem('user', email.value);
       } catch (error) {
         console.log(error);
       };
     };
-    return { email, password, msg, signin };
+    return { email, password, msg, togglePassView, signin };
     /* eslint-enable */
   },
 };
